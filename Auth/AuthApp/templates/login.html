@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<a href="{% url 'home' %}">Go back</a>
+
+<h1 style="text-align: center;">Custom Authentication app</h1>
+<h3>Login</h3>
+
+<form action="" method="POST">
+
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <input type="submit">
+
+</form>
+
+<p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+
+
+{% endblock %}
